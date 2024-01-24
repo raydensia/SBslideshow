@@ -21,8 +21,11 @@ function showSlides(n) {
   //   dots[i].className = dots[i].className.replace(" active", "");
   // }
   slides[slideIndex-1].style.display = "block";
-  if (slides[slideIndex-1].querySelector('video')) {
-    slides[slideIndex-1].querySelector('video').currentTime = '0';
+  let video = slides[slideIndex-1].querySelector('video');
+  if (video) {
+    video.pause();
+    video.currentTime = '0';
+    video.play();
     console.log("video replay attempted");
   }
   timeout = setTimeout(plusSlides, 15000);
