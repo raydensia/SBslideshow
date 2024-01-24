@@ -23,6 +23,7 @@ function showSlides(n) {
   slides[slideIndex-1].style.display = "block";
   if (slides[slideIndex-1].querySelector('video')) {
     slides[slideIndex-1].querySelector('video').currentTime = '0';
+    console.log("video replay attempted");
   }
   timeout = setTimeout(plusSlides, 15000);
   // dots[slideIndex-1].className += " active";
