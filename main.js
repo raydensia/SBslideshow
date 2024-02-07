@@ -26,7 +26,6 @@ function showSlides(n) {
     video.pause();
     video.currentTime = '0';
     video.play();
-    console.log("video replay attempted");
   }
   timeout = setTimeout(plusSlides, 15000);
   // dots[slideIndex-1].className += " active";
