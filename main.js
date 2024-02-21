@@ -26,6 +26,8 @@ function showSlides(n) {
     video.pause();
     video.currentTime = '0';
     video.play();
+    timeout = setTimeout(plusSlides, video.duration * 1000);
+    return;
   }
   timeout = setTimeout(plusSlides, 15000);
   // dots[slideIndex-1].className += " active";
