@@ -6,6 +6,13 @@ showSlides(slideIndex);
 function plusSlides(n = 1, id) {
   clearTimeout(timeout)
   showSlides(slideIndex += n);
+  let video = document.querySelector('video');
+  if (!video.checkVisibility()) {
+    video.pause();
+  }
+//   else {
+//     video.muted = true;
+//   }
 }
 
 function showSlides(n) {
@@ -26,6 +33,7 @@ function showSlides(n) {
     video.pause();
     video.currentTime = '0';
     video.play();
+    video.muted = false;
     timeout = setTimeout(plusSlides, video.duration * 1000);
     return;
   }
